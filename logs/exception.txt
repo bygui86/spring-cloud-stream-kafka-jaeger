@@ -1,0 +1,27 @@
+
+### source
+
+Exception in thread "jaeger.RemoteReporter-QueueProcessor" java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at java.util.Collections$UnmodifiableCollection$1.next(Collections.java:1042)
+	at io.jaegertracing.thrift.internal.reporters.protocols.JaegerThriftSpanConverter.buildLogs(JaegerThriftSpanConverter.java:76)
+	at io.jaegertracing.thrift.internal.reporters.protocols.JaegerThriftSpanConverter.convertSpan(JaegerThriftSpanConverter.java:58)
+	at io.jaegertracing.thrift.internal.senders.ThriftSender.append(ThriftSender.java:54)
+	at io.jaegertracing.internal.reporters.RemoteReporter$AppendCommand.execute(RemoteReporter.java:138)
+	at io.jaegertracing.internal.reporters.RemoteReporter$QueueProcessor.run(RemoteReporter.java:171)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+### sink
+
+Exception in thread "jaeger.RemoteReporter-QueueProcessor" java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at java.util.Collections$UnmodifiableCollection$1.next(Collections.java:1042)
+	at io.jaegertracing.thrift.internal.reporters.protocols.JaegerThriftSpanConverter.buildLogs(JaegerThriftSpanConverter.java:76)
+	at io.jaegertracing.thrift.internal.reporters.protocols.JaegerThriftSpanConverter.convertSpan(JaegerThriftSpanConverter.java:58)
+	at io.jaegertracing.thrift.internal.senders.ThriftSender.append(ThriftSender.java:54)
+	at io.jaegertracing.internal.reporters.RemoteReporter$AppendCommand.execute(RemoteReporter.java:138)
+	at io.jaegertracing.internal.reporters.RemoteReporter$QueueProcessor.run(RemoteReporter.java:171)
+	at java.lang.Thread.run(Thread.java:748)

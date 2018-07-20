@@ -1,0 +1,339 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.0.3.RELEASE)
+
+2018-07-20 12:48:34.133  INFO 66052 --- [           main] c.r.s.source.SourceApplication           : Starting SourceApplication on HomeMacPro.local with PID 66052 (/Users/matteobaiguini/projects/samples/spring-cloud-stream-kafka-jaeger/source/target/classes started by matteobaiguini in /Users/matteobaiguini/projects/samples/spring-cloud-stream-kafka-jaeger/source)
+2018-07-20 12:48:34.136 DEBUG 66052 --- [           main] c.r.s.source.SourceApplication           : Running with Spring Boot v2.0.3.RELEASE, Spring v5.0.7.RELEASE
+2018-07-20 12:48:34.137  INFO 66052 --- [           main] c.r.s.source.SourceApplication           : No active profile set, falling back to default profiles: default
+2018-07-20 12:48:34.176  INFO 66052 --- [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@a1153bc: startup date [Fri Jul 20 12:48:34 CEST 2018]; root of context hierarchy
+2018-07-20 12:48:34.709  INFO 66052 --- [           main] o.s.i.config.IntegrationRegistrar        : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2018-07-20 12:48:35.283  INFO 66052 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2018-07-20 12:48:35.284  INFO 66052 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2018-07-20 12:48:35.425  INFO 66052 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'io.opentracing.contrib.spring.cloud.async.DefaultAsyncAutoConfiguration$DefaultTracedAsyncConfigurerSupport' of type [io.opentracing.contrib.spring.cloud.async.DefaultAsyncAutoConfiguration$DefaultTracedAsyncConfigurerSupport$$EnhancerBySpringCGLIB$$62797ae6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-20 12:48:35.480  INFO 66052 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$f0c349ae] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-20 12:48:35.826  INFO 66052 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'io.opentracing.contrib.spring.cloud.async.DefaultAsyncAutoConfiguration' of type [io.opentracing.contrib.spring.cloud.async.DefaultAsyncAutoConfiguration$$EnhancerBySpringCGLIB$$63974b83] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-20 12:48:35.844  INFO 66052 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$8802f35a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-20 12:48:35.886  INFO 66052 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.dsl.context.IntegrationFlowContext' of type [org.springframework.integration.dsl.context.IntegrationFlowContext] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-07-20 12:48:36.270  INFO 66052 --- [           main] org.xnio                                 : XNIO version 3.3.8.Final
+2018-07-20 12:48:36.283  INFO 66052 --- [           main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.8.Final
+2018-07-20 12:48:36.326  WARN 66052 --- [           main] io.undertow.websockets.jsr               : UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used
+2018-07-20 12:48:36.326  WARN 66052 --- [           main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2018-07-20 12:48:36.356  INFO 66052 --- [           main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2018-07-20 12:48:36.356  INFO 66052 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2183 ms
+2018-07-20 12:48:36.563  INFO 66052 --- [           main] o.c.s.w.s.ServerTracingAutoConfiguration : Creating FilterRegistrationBean bean with TracingFilter mapped to [/*], skip pattern is "/api-docs.*|/autoconfig|/configprops|/dump|/health|/info|/metrics.*|/mappings|/swagger.*|.*\.png|.*\.css|.*\.js|.*\.html|/favicon.ico|/hystrix.stream"
+2018-07-20 12:48:37.264  INFO 66052 --- [           main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'taskScheduler'
+2018-07-20 12:48:37.665  INFO 66052 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'tracingFilter' to urls: [/*]
+2018-07-20 12:48:37.665  INFO 66052 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-20 12:48:37.666  INFO 66052 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-20 12:48:37.666  INFO 66052 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-20 12:48:37.666  INFO 66052 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-20 12:48:37.666  INFO 66052 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2018-07-20 12:48:37.666  INFO 66052 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2018-07-20 12:48:37.666  INFO 66052 --- [           main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-20 12:48:37.938 DEBUG 66052 --- [           main] c.r.s.s.configs.SourceTracingConfig      : Loading kafka producer factory...
+2018-07-20 12:48:37.940 DEBUG 66052 --- [           main] c.r.s.s.configs.SourceTracingConfig      : Loading kafka producer configs...
+2018-07-20 12:48:37.947 DEBUG 66052 --- [           main] c.r.s.s.configs.SourceTracingConfig      : Loading kafka template...
+2018-07-20 12:48:38.154  INFO 66052 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-07-20 12:48:38.222  INFO 66052 --- [           main] o.c.s.w.s.ServerTracingAutoConfiguration : Creating WebMvcConfigurerAdapter bean with class io.opentracing.contrib.spring.web.interceptor.TracingHandlerInterceptor
+2018-07-20 12:48:38.377  INFO 66052 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@a1153bc: startup date [Fri Jul 20 12:48:34 CEST 2018]; root of context hierarchy
+2018-07-20 12:48:38.476  INFO 66052 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-07-20 12:48:38.477  INFO 66052 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-07-20 12:48:38.547  INFO 66052 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-07-20 12:48:38.547  INFO 66052 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-07-20 12:48:39.373  INFO 66052 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoint(s) beneath base path '/actuator'
+2018-07-20 12:48:39.383  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/auditevents],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.383  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/beans],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.384  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.384  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/conditions],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.385  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/configprops],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.385  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/env],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.385  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/env/{toMatch}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.385  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.386  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/loggers],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.386  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/loggers/{name}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.387  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/loggers/{name}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.387  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/heapdump],methods=[GET],produces=[application/octet-stream]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.387  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/threaddump],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.388  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/metrics],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.388  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/metrics/{requiredMetricName}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.388  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/scheduledtasks],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.389  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/httptrace],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.389  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/mappings],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.389  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/bindings/{name}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.389  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/bindings],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.390  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/bindings/{name}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.390  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/channels],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-07-20 12:48:39.391  INFO 66052 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-07-20 12:48:39.556  INFO 66052 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-20 12:48:39.567  INFO 66052 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'integrationMbeanExporter' has been autodetected for JMX exposure
+2018-07-20 12:48:39.570  INFO 66052 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'integrationMbeanExporter': registering with JMX server as MBean [org.springframework.integration.monitor:name=integrationMbeanExporter,type=IntegrationMBeanExporter]
+2018-07-20 12:48:39.616  INFO 66052 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Registering beans for JMX exposure on startup
+2018-07-20 12:48:39.616  INFO 66052 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2018-07-20 12:48:39.619  INFO 66052 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Located managed bean 'org.springframework.integration:type=MessageChannel,name=errorChannel': registering with JMX server as MBean [org.springframework.integration:type=MessageChannel,name=errorChannel]
+2018-07-20 12:48:39.659  INFO 66052 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel output
+2018-07-20 12:48:39.660  INFO 66052 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Located managed bean 'org.springframework.integration:type=MessageChannel,name=output': registering with JMX server as MBean [org.springframework.integration:type=MessageChannel,name=output]
+2018-07-20 12:48:39.670  INFO 66052 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2018-07-20 12:48:39.671  INFO 66052 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Located managed bean 'org.springframework.integration:type=MessageChannel,name=nullChannel': registering with JMX server as MBean [org.springframework.integration:type=MessageChannel,name=nullChannel]
+2018-07-20 12:48:39.686  INFO 66052 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
+2018-07-20 12:48:39.688  INFO 66052 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Located managed bean 'org.springframework.integration:type=MessageHandler,name=errorLogger,bean=internal': registering with JMX server as MBean [org.springframework.integration:type=MessageHandler,name=errorLogger,bean=internal]
+2018-07-20 12:48:39.710  INFO 66052 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147482648
+2018-07-20 12:48:39.753  INFO 66052 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@79f5a6ed: startup date [Fri Jul 20 12:48:39 CEST 2018]; parent: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@a1153bc
+2018-07-20 12:48:40.004  INFO 66052 --- [           main] o.s.c.s.b.k.p.KafkaTopicProvisioner      : Using kafka topic for outbound: timestamp
+2018-07-20 12:48:40.006  INFO 66052 --- [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values:
+	bootstrap.servers = [localhost:9092]
+	client.id =
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2018-07-20 12:48:40.048  INFO 66052 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version : 1.0.1
+2018-07-20 12:48:40.048  INFO 66052 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId : c0518aa65f25317e
+2018-07-20 12:48:40.335  INFO 66052 --- [           main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values:
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.id =
+	compression.type = none
+	connections.max.idle.ms = 540000
+	enable.idempotence = false
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2018-07-20 12:48:40.357  INFO 66052 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version : 1.0.1
+2018-07-20 12:48:40.358  INFO 66052 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId : c0518aa65f25317e
+2018-07-20 12:48:40.365  INFO 66052 --- [           main] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2018-07-20 12:48:40.376  INFO 66052 --- [           main] o.s.integration.channel.DirectChannel    : Channel 'source.output' has 1 subscriber(s).
+2018-07-20 12:48:40.378  INFO 66052 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2018-07-20 12:48:40.379  INFO 66052 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2018-07-20 12:48:40.379  INFO 66052 --- [           main] o.s.i.channel.PublishSubscribeChannel    : Channel 'source.errorChannel' has 1 subscriber(s).
+2018-07-20 12:48:40.379  INFO 66052 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : started _org.springframework.integration.errorLogger
+2018-07-20 12:48:40.379  INFO 66052 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147482647
+2018-07-20 12:48:40.380  INFO 66052 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483547
+2018-07-20 12:48:40.458  INFO 66052 --- [           main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 8081 (http) with context path ''
+2018-07-20 12:48:40.461  INFO 66052 --- [           main] c.r.s.source.SourceApplication           : Started SourceApplication in 6.605 seconds (JVM running for 7.382)
+2018-07-20 12:48:45.413  INFO 66052 --- [ask-scheduler-1] c.r.s.s.services.SourcePublisherService  : Sending message number 1: 1532083725413
+2018-07-20 12:48:45.476  INFO 66052 --- [ask-scheduler-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values:
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.id =
+	compression.type = none
+	connections.max.idle.ms = 540000
+	enable.idempotence = false
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2018-07-20 12:48:45.479  INFO 66052 --- [ask-scheduler-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version : 1.0.1
+2018-07-20 12:48:45.479  INFO 66052 --- [ask-scheduler-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId : c0518aa65f25317e
+2018-07-20 12:48:45.501  INFO 66052 --- [ask-scheduler-1] i.j.internal.reporters.LoggingReporter   : Span reported: df9f6bec955e2fc1:4210b3918cd8c316:df9f6bec955e2fc1:1 - send:output
+2018-07-20 12:48:45.501  INFO 66052 --- [ask-scheduler-1] c.r.s.s.s.SourceSchedulerService         : Messager number 1 - TimeStamp returned: 1532083725413
+2018-07-20 12:48:45.501  INFO 66052 --- [ask-scheduler-1] i.j.internal.reporters.LoggingReporter   : Span reported: df9f6bec955e2fc1:df9f6bec955e2fc1:0:1 - sendTimeMessage
+2018-07-20 12:48:48.398  INFO 66052 --- [ask-scheduler-1] c.r.s.s.services.SourcePublisherService  : Sending message number 2: 1532083728398
+2018-07-20 12:48:48.399  INFO 66052 --- [ask-scheduler-1] i.j.internal.reporters.LoggingReporter   : Span reported: a8389917696464e1:6f33080e94061bd9:a8389917696464e1:1 - send:output
+2018-07-20 12:48:48.400  INFO 66052 --- [ask-scheduler-1] c.r.s.s.s.SourceSchedulerService         : Messager number 2 - TimeStamp returned: 1532083728398
+2018-07-20 12:48:48.400  INFO 66052 --- [ask-scheduler-1] i.j.internal.reporters.LoggingReporter   : Span reported: a8389917696464e1:a8389917696464e1:0:1 - sendTimeMessage
+2018-07-20 12:48:51.397  INFO 66052 --- [ask-scheduler-2] c.r.s.s.services.SourcePublisherService  : Sending message number 3: 1532083731397
+2018-07-20 12:48:51.399  INFO 66052 --- [ask-scheduler-2] i.j.internal.reporters.LoggingReporter   : Span reported: 4aca48b21dcffebd:2fea16d69bde5b64:4aca48b21dcffebd:1 - send:output
+2018-07-20 12:48:51.400  INFO 66052 --- [ask-scheduler-2] c.r.s.s.s.SourceSchedulerService         : Messager number 3 - TimeStamp returned: 1532083731397
+2018-07-20 12:48:51.400  INFO 66052 --- [ask-scheduler-2] i.j.internal.reporters.LoggingReporter   : Span reported: 4aca48b21dcffebd:4aca48b21dcffebd:0:1 - sendTimeMessage
+2018-07-20 12:48:54.393  INFO 66052 --- [ask-scheduler-1] c.r.s.s.services.SourcePublisherService  : Sending message number 4: 1532083734393
+2018-07-20 12:48:54.395  INFO 66052 --- [ask-scheduler-1] i.j.internal.reporters.LoggingReporter   : Span reported: e22c758cfded1218:863dff3ef8b21c34:e22c758cfded1218:1 - send:output
+2018-07-20 12:48:54.395  INFO 66052 --- [ask-scheduler-1] c.r.s.s.s.SourceSchedulerService         : Messager number 4 - TimeStamp returned: 1532083734393
+2018-07-20 12:48:54.396  INFO 66052 --- [ask-scheduler-1] i.j.internal.reporters.LoggingReporter   : Span reported: e22c758cfded1218:e22c758cfded1218:0:1 - sendTimeMessage
+2018-07-20 12:48:57.395  INFO 66052 --- [ask-scheduler-3] c.r.s.s.services.SourcePublisherService  : Sending message number 5: 1532083737395
+2018-07-20 12:48:57.397  INFO 66052 --- [ask-scheduler-3] i.j.internal.reporters.LoggingReporter   : Span reported: e3afd2d0c8e5f74e:56fbceab4d2f81b7:e3afd2d0c8e5f74e:1 - send:output
+2018-07-20 12:48:57.397  INFO 66052 --- [ask-scheduler-3] c.r.s.s.s.SourceSchedulerService         : Messager number 5 - TimeStamp returned: 1532083737395
+2018-07-20 12:48:57.397  INFO 66052 --- [ask-scheduler-3] i.j.internal.reporters.LoggingReporter   : Span reported: e3afd2d0c8e5f74e:e3afd2d0c8e5f74e:0:1 - sendTimeMessage
+2018-07-20 12:49:00.393  INFO 66052 --- [ask-scheduler-2] c.r.s.s.services.SourcePublisherService  : Sending message number 6: 1532083740393
+2018-07-20 12:49:00.394  INFO 66052 --- [ask-scheduler-2] i.j.internal.reporters.LoggingReporter   : Span reported: 817e215a68f3bd28:3df97676065b0466:817e215a68f3bd28:1 - send:output
+2018-07-20 12:49:00.395  INFO 66052 --- [ask-scheduler-2] c.r.s.s.s.SourceSchedulerService         : Messager number 6 - TimeStamp returned: 1532083740393
+2018-07-20 12:49:00.395  INFO 66052 --- [ask-scheduler-2] i.j.internal.reporters.LoggingReporter   : Span reported: 817e215a68f3bd28:817e215a68f3bd28:0:1 - sendTimeMessage
+2018-07-20 12:49:03.397  INFO 66052 --- [ask-scheduler-4] c.r.s.s.services.SourcePublisherService  : Sending message number 7: 1532083743397
+2018-07-20 12:49:03.399  INFO 66052 --- [ask-scheduler-4] i.j.internal.reporters.LoggingReporter   : Span reported: 1de1042a37defe6c:a3a6271873a4a87a:1de1042a37defe6c:1 - send:output
+2018-07-20 12:49:03.400  INFO 66052 --- [ask-scheduler-4] c.r.s.s.s.SourceSchedulerService         : Messager number 7 - TimeStamp returned: 1532083743397
+2018-07-20 12:49:03.400  INFO 66052 --- [ask-scheduler-4] i.j.internal.reporters.LoggingReporter   : Span reported: 1de1042a37defe6c:1de1042a37defe6c:0:1 - sendTimeMessage
+2018-07-20 12:49:06.392  INFO 66052 --- [ask-scheduler-1] c.r.s.s.services.SourcePublisherService  : Sending message number 8: 1532083746392
+2018-07-20 12:49:06.394  INFO 66052 --- [ask-scheduler-1] i.j.internal.reporters.LoggingReporter   : Span reported: 55385fcfe585bd18:47ac1691b22b0647:55385fcfe585bd18:1 - send:output
+2018-07-20 12:49:06.394  INFO 66052 --- [ask-scheduler-1] c.r.s.s.s.SourceSchedulerService         : Messager number 8 - TimeStamp returned: 1532083746392
+2018-07-20 12:49:06.394  INFO 66052 --- [ask-scheduler-1] i.j.internal.reporters.LoggingReporter   : Span reported: 55385fcfe585bd18:55385fcfe585bd18:0:1 - sendTimeMessage
+2018-07-20 12:49:09.393  INFO 66052 --- [ask-scheduler-5] c.r.s.s.services.SourcePublisherService  : Sending message number 9: 1532083749393
+2018-07-20 12:49:09.394  INFO 66052 --- [ask-scheduler-5] i.j.internal.reporters.LoggingReporter   : Span reported: bcc622964e6e7448:1e28e0aae3959207:bcc622964e6e7448:1 - send:output
+2018-07-20 12:49:09.394  INFO 66052 --- [ask-scheduler-5] c.r.s.s.s.SourceSchedulerService         : Messager number 9 - TimeStamp returned: 1532083749393
+2018-07-20 12:49:09.394  INFO 66052 --- [ask-scheduler-5] i.j.internal.reporters.LoggingReporter   : Span reported: bcc622964e6e7448:bcc622964e6e7448:0:1 - sendTimeMessage
+2018-07-20 12:49:12.397  INFO 66052 --- [ask-scheduler-3] c.r.s.s.services.SourcePublisherService  : Sending message number 10: 1532083752397
+2018-07-20 12:49:12.399  INFO 66052 --- [ask-scheduler-3] i.j.internal.reporters.LoggingReporter   : Span reported: b9df85e4e121ec96:566bd689d5271aa8:b9df85e4e121ec96:1 - send:output
+2018-07-20 12:49:12.399  INFO 66052 --- [ask-scheduler-3] c.r.s.s.s.SourceSchedulerService         : Messager number 10 - TimeStamp returned: 1532083752397
+2018-07-20 12:49:12.399  INFO 66052 --- [ask-scheduler-3] i.j.internal.reporters.LoggingReporter   : Span reported: b9df85e4e121ec96:b9df85e4e121ec96:0:1 - sendTimeMessage
+2018-07-20 12:49:15.392  INFO 66052 --- [ask-scheduler-3] c.r.s.s.services.SourcePublisherService  : Sending message number 11: 1532083755392
+2018-07-20 12:49:15.394  INFO 66052 --- [ask-scheduler-3] i.j.internal.reporters.LoggingReporter   : Span reported: 4009d5dff5f63931:51819ca6893bdf96:4009d5dff5f63931:1 - send:output
+2018-07-20 12:49:15.394  INFO 66052 --- [ask-scheduler-3] c.r.s.s.s.SourceSchedulerService         : Messager number 11 - TimeStamp returned: 1532083755392
+2018-07-20 12:49:15.394  INFO 66052 --- [ask-scheduler-3] i.j.internal.reporters.LoggingReporter   : Span reported: 4009d5dff5f63931:4009d5dff5f63931:0:1 - sendTimeMessage
+Exception in thread "jaeger.RemoteReporter-QueueProcessor" java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:901)
+	at java.util.ArrayList$Itr.next(ArrayList.java:851)
+	at java.util.Collections$UnmodifiableCollection$1.next(Collections.java:1042)
+	at io.jaegertracing.thrift.internal.reporters.protocols.JaegerThriftSpanConverter.buildLogs(JaegerThriftSpanConverter.java:76)
+	at io.jaegertracing.thrift.internal.reporters.protocols.JaegerThriftSpanConverter.convertSpan(JaegerThriftSpanConverter.java:58)
+	at io.jaegertracing.thrift.internal.senders.ThriftSender.append(ThriftSender.java:54)
+	at io.jaegertracing.internal.reporters.RemoteReporter$AppendCommand.execute(RemoteReporter.java:138)
+	at io.jaegertracing.internal.reporters.RemoteReporter$QueueProcessor.run(RemoteReporter.java:171)
+	at java.lang.Thread.run(Thread.java:748)
+2018-07-20 12:49:18.397  INFO 66052 --- [ask-scheduler-3] c.r.s.s.services.SourcePublisherService  : Sending message number 12: 1532083758397
+2018-07-20 12:49:18.398  INFO 66052 --- [ask-scheduler-3] i.j.internal.reporters.LoggingReporter   : Span reported: 3896564881b29660:c63e5a8d80d54cf8:3896564881b29660:1 - send:output
+2018-07-20 12:49:18.398  INFO 66052 --- [ask-scheduler-3] c.r.s.s.s.SourceSchedulerService         : Messager number 12 - TimeStamp returned: 1532083758397
+2018-07-20 12:49:18.398  INFO 66052 --- [ask-scheduler-3] i.j.internal.reporters.LoggingReporter   : Span reported: 3896564881b29660:3896564881b29660:0:1 - sendTimeMessage
+2018-07-20 12:49:21.393  INFO 66052 --- [ask-scheduler-3] c.r.s.s.services.SourcePublisherService  : Sending message number 13: 1532083761393
+2018-07-20 12:49:21.394  INFO 66052 --- [ask-scheduler-3] i.j.internal.reporters.LoggingReporter   : Span reported: a94263e873f8b853:4f9fb1d28dd4230e:a94263e873f8b853:1 - send:output
+2018-07-20 12:49:21.394  INFO 66052 --- [ask-scheduler-3] c.r.s.s.s.SourceSchedulerService         : Messager number 13 - TimeStamp returned: 1532083761393
+2018-07-20 12:49:21.394  INFO 66052 --- [ask-scheduler-3] i.j.internal.reporters.LoggingReporter   : Span reported: a94263e873f8b853:a94263e873f8b853:0:1 - sendTimeMessage
+^C2018-07-20 12:49:23.011  INFO 66052 --- [       Thread-7] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@a1153bc: startup date [Fri Jul 20 12:48:34 CEST 2018]; root of context hierarchy
+2018-07-20 12:49:23.013  INFO 66052 --- [       Thread-7] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@79f5a6ed: startup date [Fri Jul 20 12:48:39 CEST 2018]; parent: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@a1153bc
+2018-07-20 12:49:23.016  INFO 66052 --- [       Thread-7] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483547
+2018-07-20 12:49:23.016  INFO 66052 --- [       Thread-7] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147482647
+2018-07-20 12:49:23.017  INFO 66052 --- [       Thread-7] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2018-07-20 12:49:23.017  INFO 66052 --- [       Thread-7] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2018-07-20 12:49:23.018  INFO 66052 --- [       Thread-7] o.s.i.channel.PublishSubscribeChannel    : Channel 'source.errorChannel' has 0 subscriber(s).
+2018-07-20 12:49:23.018  INFO 66052 --- [       Thread-7] o.s.i.endpoint.EventDrivenConsumer       : stopped _org.springframework.integration.errorLogger
+2018-07-20 12:49:23.018  INFO 66052 --- [       Thread-7] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147482648
+2018-07-20 12:49:23.018  INFO 66052 --- [       Thread-7] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-2] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2018-07-20 12:49:23.021  INFO 66052 --- [       Thread-7] o.s.i.monitor.IntegrationMBeanExporter   : Unregistering JMX-exposed beans on shutdown
+2018-07-20 12:49:23.021  INFO 66052 --- [       Thread-7] o.s.i.monitor.IntegrationMBeanExporter   : Unregistering JMX-exposed beans
+2018-07-20 12:49:23.021  INFO 66052 --- [       Thread-7] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: errorChannel
+2018-07-20 12:49:23.022  INFO 66052 --- [       Thread-7] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: output
+2018-07-20 12:49:23.022  INFO 66052 --- [       Thread-7] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2018-07-20 12:49:23.022  INFO 66052 --- [       Thread-7] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: _org.springframework.integration.errorLogger.handler
+2018-07-20 12:49:23.022  INFO 66052 --- [       Thread-7] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-20 12:49:23.022  INFO 66052 --- [       Thread-7] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-07-20 12:49:23.024  INFO 66052 --- [       Thread-7] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 52.035 s
+[INFO] Finished at: 2018-07-20T12:49:23+02:00
+[INFO] ------------------------------------------------------------------------
