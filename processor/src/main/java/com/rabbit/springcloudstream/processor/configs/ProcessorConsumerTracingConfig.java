@@ -18,7 +18,7 @@ import java.util.Map;
 
 
 @Slf4j
-@Configuration("processorTracingConfig")
+@Configuration("processorConsumerTracingConfig")
 // @AutoConfigureAfter(ProcessorStreamConfig.class)
 public class ProcessorConsumerTracingConfig {
 

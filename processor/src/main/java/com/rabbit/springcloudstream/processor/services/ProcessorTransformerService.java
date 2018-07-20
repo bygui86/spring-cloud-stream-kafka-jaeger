@@ -21,11 +21,11 @@ public class ProcessorTransformerService {
 	)
 	public Object transform(final Long timestamp) {
 
-		log.info("Transform message {}: {}", totalMsg, timestamp);
-		totalMsg++;
-
 		final DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd hh:mm:yy");
-		return dateFormat.format(timestamp);
+		final String stringTimestamp = dateFormat.format(timestamp);
+		log.info("Transform message {} from {} to {}", totalMsg, timestamp, stringTimestamp);
+		totalMsg++;
+		return stringTimestamp;
 	}
 
 }
