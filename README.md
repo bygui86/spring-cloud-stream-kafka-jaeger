@@ -14,8 +14,8 @@
 
 ## issues
 * https://github.com/opentracing-contrib/java-spring-cloud/issues/5
-* https://github.com/jaegertracing/jaeger-client-java/issues/363
 * https://github.com/jaegertracing/jaeger-client-java/issues/334
+* https://github.com/jaegertracing/jaeger-client-java/pull/500
 
 
 ## repos
