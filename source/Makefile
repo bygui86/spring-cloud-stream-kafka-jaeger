@@ -9,16 +9,18 @@ NAME := source
 
 BUILD_TOOL := ./mvnw
 JAR_FILE := $(shell find target -name '*.jar' 2>/dev/null)
-# see https://docs.spring.io/spring-boot/docs/2.0.3.RELEASE/maven-plugin/run-mojo.html#jvmArguments
-MEM_OPTS := -Xms128m -Xmx128m
-JMX_OPTS := -XX:+UnlockCommercialFeatures -XX:+FlightRecorder -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=38081 -Dcom.sun.management.jmxremote.local.only=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false
-DEBUG_OPTS := -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005
 
 IMAGE_NAME := samples/$(NAME)
 IMAGE_TAG := latest
 IMAGE_EXPOSE_PORT := 8081
 DOCKER_HOST_IP := localhost
 DOCKER_HOST_PORT := 5000
+
+# see https://docs.spring.io/spring-boot/docs/2.0.3.RELEASE/maven-plugin/run-mojo.html#jvmArguments
+MEM_OPTS := -Xms128m -Xmx128m
+JMX_OPTS := -XX:+UnlockCommercialFeatures -XX:+FlightRecorder -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=3$(IMAGE_EXPOSE_PORT) -Dcom.sun.management.jmxremote.local.only=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false
+DEBUG_OPTS := -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005
+OTHER_OPTS := 
 
 .PHONY: help
 .DEFAULT_GOAL := help
@@ -43,15 +45,17 @@ print-variables :		## Print variables values
 	@echo "- - - "
 	@echo "BUILD_TOOL: $(BUILD_TOOL)"
 	@echo "JAR_FILE: $(JAR_FILE)"
-	@echo "MEM_OPTS: $(MEM_OPTS)"
-	@echo "JMX_OPTS: $(JMX_OPTS)"
-	@echo "DEBUG_OPTS: $(DEBUG_OPTS)"
 	@echo "- - - "
 	@echo "IMAGE_NAME: $(IMAGE_NAME)"
 	@echo "IMAGE_TAG: $(IMAGE_TAG)"
 	@echo "IMAGE_EXPOSE_PORT: $(IMAGE_EXPOSE_PORT)"
 	@echo "DOCKER_HOST_IP: $(DOCKER_HOST_IP)"
 	@echo "DOCKER_HOST_PORT: $(DOCKER_HOST_PORT)"
+	@echo "- - - "
+	@echo "MEM_OPTS: $(MEM_OPTS)"
+	@echo "JMX_OPTS: $(JMX_OPTS)"
+	@echo "DEBUG_OPTS: $(DEBUG_OPTS)"
+	@echo "OTHER_OPTS: $(OTHER_OPTS)"
 
 
 # BUILDING
